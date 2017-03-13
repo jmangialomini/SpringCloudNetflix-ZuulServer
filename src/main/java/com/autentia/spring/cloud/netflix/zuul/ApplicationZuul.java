@@ -13,4 +13,4 @@ public class ApplicationZuul {
     public static void main(String[] args) {
         new SpringApplicationBuilder(ApplicationZuul.class).web(true).run(args);
     }
-}x
+}
