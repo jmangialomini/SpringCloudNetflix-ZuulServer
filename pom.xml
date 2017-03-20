@@ -27,8 +27,6 @@
 	</dependencyManagement>
 
 	<dependencies>
-	 
-<!-- Eureka server // Service Discovery -->
 	
     	<dependency>
         	<groupId>org.springframework.cloud</groupId>
@@ -61,5 +59,4 @@
         	</snapshots>
     	</repository>
 	</repositories>  
-</project>
 </project>

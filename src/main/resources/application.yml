@@ -1,6 +1,17 @@
+#Component Info
 info:
-  component: Zuul Server
+  component: Zuul-Server
+  
+#Spring Application Name  
+spring:
+  application:
+    name: Zuul-Server  
+  
+#Server Port
+server:
+  port: 8765  
 
+#Endpoints 
 endpoints:
   restart:
     enabled: true
@@ -9,10 +20,19 @@ endpoints:
   health:
     sensitive: false
 
-server:
-  port: 8765
+#Zuul routes active    
+zuul: 
+  routes:
+   public-restservice: 
+    path: /public/**
+    serviceId: public-restservice
+    
+#Eureka Instance ID
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${server.port}    
 
-logging:
-  level:
-    ROOT: INFO
-    org.springframework.web: INFO
+#Ribbon Activation
+ribbon:
+ eureka:
+  enabled: true
